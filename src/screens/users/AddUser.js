@@ -11,7 +11,7 @@ import {Input, Button, Divider, colors, CheckBox} from 'react-native-elements';
 import {useForm, Controller} from 'react-hook-form';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
-import {createUser} from '../store/ducks/users';
+import {createUser} from '../../store/ducks/users';
 
 const AddUser = () => {
   const {userIsCreating} = useSelector((state) => state.users);

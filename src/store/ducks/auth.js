@@ -5,7 +5,7 @@ const PROFILE_UPDATE_IN_PROGRESS = 'toptal/auth/profileUpdateInProgress';
 import {showMessage, error, resetStore} from './main';
 import {backendURL} from '../../utils/api';
 import Axios from 'axios';
-import axiosInstance from '../../interseptor';
+import axiosInstance from '../../interceptor';
 import AsyncStorage from '@react-native-community/async-storage';
 import fbAuth from '@react-native-firebase/auth';
 import {goBack} from '../../services/navigationService';

@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {Overlay, CheckBox} from 'react-native-elements';
-import {Loader, TripsFilter} from '../components';
+import {Loader, TripsFilter} from '../../components';
 import {useSelector, useDispatch} from 'react-redux';
 import {
   getTrips,
   getNextMonthTrips,
   toggleNextMonthCheckBox,
-} from '../store/ducks/trips';
+} from '../../store/ducks/trips';
 import {FlatList, StyleSheet, View} from 'react-native';
-import TripItem from '../components/TripItem';
+import TripItem from '../../components/trips/TripItem';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {colors} from '../theme';
+import {colors} from '../../theme';
 import {TouchableOpacity, Platform} from 'react-native';
 const LIMIT = 20;
 

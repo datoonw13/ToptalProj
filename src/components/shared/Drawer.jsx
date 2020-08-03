@@ -3,14 +3,22 @@ import {DrawerContentScrollView} from '@react-navigation/drawer';
 import Container from './Container';
 import {Button, Text} from 'react-native-elements';
 import {useDispatch, useSelector} from 'react-redux';
-import {resetStore} from '../store/ducks/main';
+import {resetStore} from '../../store/ducks/main';
 import {SafeAreaView, View, StyleSheet} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+import storeRegistry from '../../store/storeRegistry';
+import {notify} from '../../services/notificationService';
 const Drawer = () => {
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
 
   const signoutHandler = () => {
-    dispatch(resetStore());
+    try {
+      AsyncStorage.removeItem('authorization');
+      dispatch(resetStore());
+    } catch {
+      notify('error', 'Error', 'Something went wrong');
+    }
   };
   return (
     <Container>

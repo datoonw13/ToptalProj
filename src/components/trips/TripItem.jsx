@@ -4,9 +4,9 @@ import {Text} from 'react-native-elements';
 import {useSelector, useDispatch} from 'react-redux';
 import {View} from 'react-native';
 import {StyleSheet} from 'react-native';
-import {colors} from '../theme';
-import {navigate} from '../services/navigationService';
-import {setSelectedTrip} from '../store/ducks/trips';
+import {colors} from '../../theme';
+import {navigate} from '../../services/navigationService';
+import {setSelectedTrip} from '../../store/ducks/trips';
 
 // ამოიღე ჩაჰარდკოდებული ტექსტი
 const TripItem = ({trip, editable = true}) => {

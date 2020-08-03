@@ -11,7 +11,7 @@ import {Input, Button, Divider, colors, Text} from 'react-native-elements';
 import {useForm, Controller} from 'react-hook-form';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
-import {editProfile} from '../store/ducks/auth';
+import {editProfile} from '../../store/ducks/auth';
 
 const Profile = () => {
   const {profileUpdateInProgress, user} = useSelector((state) => state.auth);

@@ -1,24 +1,22 @@
-import SignInScreen from './SignIn';
-import SignUpScreen from './SignUp';
-import SplashScreen from './Splash';
-import TripsScreen from './Trips';
-import Tab2Screen from './Tab2';
-import TripDetailsScreen from './TripDetails';
-import GetStartedScreen from './GetStarted';
-import ProfileScreen from './Profile';
-import CreateTripScreen from './CreateTrip';
-import EditTripScreen from './EditTrip';
-import NextMonthTrips from './NextMonthTrips';
-import UsersScreen from './Users';
-import UserDetailsScreen from './UserDetails';
-import EditUserScreen from './EditUser';
-import AddUserScreen from './AddUser';
+import SignInScreen from './auth/SignIn';
+import SignUpScreen from './auth/SignUp';
+import SplashScreen from './auth/Splash';
+import TripsScreen from './trips/Trips';
+import TripDetailsScreen from './trips/TripDetails';
+import GetStartedScreen from './auth/GetStarted';
+import ProfileScreen from './auth/Profile';
+import CreateTripScreen from './trips/CreateTrip';
+import EditTripScreen from './trips/EditTrip';
+import NextMonthTrips from './trips/NextMonthTrips';
+import UsersScreen from './users/Users';
+import UserDetailsScreen from './users/UserDetails';
+import EditUserScreen from './users/EditUser';
+import AddUserScreen from './users/AddUser';
 export {
   SignInScreen,
   SignUpScreen,
   SplashScreen,
   TripsScreen,
-  Tab2Screen,
   TripDetailsScreen,
   GetStartedScreen,
   ProfileScreen,

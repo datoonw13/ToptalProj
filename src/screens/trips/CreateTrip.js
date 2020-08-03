@@ -7,9 +7,9 @@ import Textarea from 'react-native-textarea';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 import {useForm, Controller} from 'react-hook-form';
 import {useDispatch, useSelector} from 'react-redux';
-import {createTrip} from '../store/ducks/trips';
+import {createTrip} from '../../store/ducks/trips';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
-import {getDateString, addDays, getUTC00ByDate} from '../utils/date';
+import {getDateString, addDays, getUTC00ByDate} from '../../utils/date';
 
 //get current date
 const CreateTrip = () => {

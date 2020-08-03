@@ -11,7 +11,7 @@ import {Input, Button, Divider, colors, Text} from 'react-native-elements';
 import {useForm, Controller} from 'react-hook-form';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
-import {updateUser} from '../store/ducks/users';
+import {updateUser} from '../../store/ducks/users';
 
 const EditUser = () => {
   const {userIsUpdating, selectedUser} = useSelector((state) => state.users);

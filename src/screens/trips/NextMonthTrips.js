@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {Divider} from 'react-native-elements';
-import {Container, Loader} from '../components';
+import {Container, Loader} from '../../components';
 import {useSelector, useDispatch} from 'react-redux';
-import {getNextMonthTrips} from '../store/ducks/trips';
+import {getNextMonthTrips} from '../../store/ducks/trips';
 import {FlatList} from 'react-native';
-import TripItem from '../components/TripItem';
+import TripItem from '../../components/trips/TripItem';
 
 const NextMonthTrips = () => {
   const {tripDetailsforNextMonthAreLoading, tripsForNextMonth} = useSelector(

@@ -3,9 +3,9 @@ import {StyleSheet, View, Keyboard, KeyboardAvoidingView} from 'react-native';
 import {Input, Button, colors, Divider, CheckBox} from 'react-native-elements';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {useDispatch, useSelector} from 'react-redux';
-import {setTripsFilterData} from '../store/ducks/trips';
+import {setTripsFilterData} from '../../store/ducks/trips';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
-import {getDateString, addDays, getUTC00ByDate} from '../utils/date';
+import {getDateString, addDays, getUTC00ByDate} from '../../utils/date';
 
 const TripsFilter = ({hide, onSubmit}) => {
   const {tripsFilter, currentDate} = useSelector((state) => state.trips);

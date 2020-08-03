@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
-import {UserIteim, Loader} from '../components';
+import {UserItem, Loader} from '../../components';
 import {useSelector, useDispatch} from 'react-redux';
-import {getUsers, setSelectedUser} from '../store/ducks/users';
-import {navigate} from '../services/navigationService';
+import {getUsers, setSelectedUser} from '../../store/ducks/users';
+import {navigate} from '../../services/navigationService';
 import {Button} from 'react-native-elements';
 
 const Users = () => {
@@ -21,7 +21,7 @@ const Users = () => {
   };
 
   const renderTrip = ({item}) => (
-    <UserIteim user={item} onPress={userPressHandler} />
+    <UserItem user={item} onPress={userPressHandler} />
   );
 
   return (

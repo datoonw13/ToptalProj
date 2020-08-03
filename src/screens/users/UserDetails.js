@@ -1,30 +1,26 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, View, Alert} from 'react-native';
-import {Container} from '../components';
+import {Container} from '../../components';
 import {useDispatch, useSelector} from 'react-redux';
-import {getDateString} from '../utils/date';
 import {Text, Button, Divider} from 'react-native-elements';
-import {colors} from '../theme';
-import {deleteTrip, setSelectedTrip} from '../store/ducks/trips';
+import {colors} from '../../theme';
+import {deleteUser, setSelectedUser} from '../../store/ducks/users';
 
 // კომენტარია სწორი
-const TripDetails = ({navigation}) => {
+const UserDetails = ({navigation}) => {
   const dispatch = useDispatch();
-  const {user} = useSelector((state) => state.auth);
-  const {destination, daysLeft, startDate, endDate, comment, id} = useSelector(
-    (state) => state.trips.selectedTrip,
-  );
-
-  console.log('render');
+  const {selectedUser} = useSelector((state) => state.users);
+  const {role: currentUserRole} = useSelector((state) => state.auth.user);
+  const {email, role} = selectedUser;
 
   useEffect(() => {
     return () => {
-      dispatch(setSelectedTrip(null));
+      dispatch(setSelectedUser(null));
     };
   }, [dispatch]);
 
   const editHandler = () => {
-    navigation.push('Edit Trip');
+    navigation.push('Edit User');
   };
 
   const deleteHandler = () =>
@@ -36,7 +32,8 @@ const TripDetails = ({navigation}) => {
       {
         text: 'OK',
         onPress: () => {
-          dispatch(deleteTrip(id));
+          dispatch(deleteUser(selectedUser));
+          navigation.goBack();
         },
       },
     ]);
@@ -44,19 +41,10 @@ const TripDetails = ({navigation}) => {
   return (
     <Container style={styles.container}>
       <View style={styles.itemContainer}>
-        <Text>{`${user.name}'s trip`}</Text>
+        <Text>{email}</Text>
       </View>
       <View style={styles.itemContainer}>
-        <Text>{destination}</Text>
-      </View>
-      <View style={styles.itemContainer}>
-        <Text>{`${getDateString(startDate)} - ${getDateString(endDate)}`}</Text>
-      </View>
-      <View style={styles.itemContainer}>
-        <Text>{daysLeft >= 0 ? `${daysLeft} days left` : 'past'}</Text>
-      </View>
-      <View style={styles.commentWrapper}>
-        <Text>{comment ? comment : 'no comment'}</Text>
+        {currentUserRole === 'admin' && <Text>{role}</Text>}
       </View>
       <View style={styles.divider}>
         <Button title="edit" onPress={editHandler} />
@@ -67,7 +55,7 @@ const TripDetails = ({navigation}) => {
   );
 };
 
-export default TripDetails;
+export default UserDetails;
 
 const styles = StyleSheet.create({
   container: {

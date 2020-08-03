@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {colors} from '../theme';
+import {colors} from '../../theme';
 
 const Burger = ({navigation}) => {
   return (

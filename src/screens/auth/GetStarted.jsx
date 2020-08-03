@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container} from '../components';
+import {Container} from '../../components';
 import {Button, Divider} from 'react-native-elements';
 import {StyleSheet} from 'react-native';
 const GetStarted = ({navigation}) => {

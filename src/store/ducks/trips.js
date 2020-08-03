@@ -14,7 +14,7 @@ const TRIP_IS_DELETING = 'toptal/trip/tripIsDeleting';
 const SET_SELECTED_TRIP = 'toptal/trip/setSelectedTrip';
 const SET_CURRENT_DATE = 'toptal/trip/setCurrentDate';
 const CURRENT_DATE_IS_LOADING = 'toptal/trip/currentDateIsLoading';
-import axiosInstance from '../../interseptor';
+import axiosInstance from '../../interceptor';
 import {backendURL} from '../../utils/api';
 import {showMessage} from './main';
 import {navigate, goBack} from '../../services/navigationService';

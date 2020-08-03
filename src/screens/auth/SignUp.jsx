@@ -10,14 +10,14 @@ import {
 import {Input, Button, Divider, colors} from 'react-native-elements';
 import {useForm, Controller} from 'react-hook-form';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import {signUp} from '../../store/ducks/auth';
 import {useDispatch, useSelector} from 'react-redux';
-import {signIn} from '../store/ducks/auth';
 
-const SignIn = ({navigation}) => {
+const SignUp = () => {
   const {authIsInProgress} = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const onSubmit = (data) => dispatch(signIn(data.email, data.password));
-  const {control, handleSubmit, errors} = useForm();
+  const onSubmit = (data) => dispatch(signUp(data.email, data.password));
+  const {control, handleSubmit, errors, watch} = useForm();
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView
@@ -58,26 +58,47 @@ const SignIn = ({navigation}) => {
                 onBlur={onBlur}
                 onChangeText={(val) => onChange(val)}
                 value={value}
-                errorMessage={errors.password && 'Please enter password'}
+                errorMessage={
+                  errors.password && 'Password must be at least 6 symbols'
+                }
               />
             )}
             rules={{
+              required: true,
+              validate: (value) => value?.length >= 6,
+            }}
+          />
+          <Controller
+            name="repeatePassword"
+            control={control}
+            render={({onChange, onBlur, value}) => {
+              return (
+                <Input
+                  secureTextEntry={true}
+                  placeholder="repeate password"
+                  leftIcon={
+                    <AntDesign name="unlock" size={22} color={colors.grey2} />
+                  }
+                  onBlur={onBlur}
+                  onChangeText={(val) => onChange(val)}
+                  value={value}
+                  errorMessage={
+                    errors.repeatePassword && "passwords doesn't match"
+                  }
+                />
+              );
+            }}
+            rules={{
+              validate: (value) =>
+                value === watch('password') && value?.length >= 6,
               required: true,
             }}
           />
           <Divider />
           <Button
-            title="Sign In"
+            title="Sign Up"
             onPress={handleSubmit(onSubmit)}
             disabled={authIsInProgress}
-            disabledTitleStyle={{color: colors.primary}}
-          />
-          <Divider />
-          <Button
-            title="Sign Up"
-            onPress={() => navigation.push('SignUp')}
-            disabled={authIsInProgress}
-            disabledTitleStyle={{color: colors.primary}}
           />
         </View>
       </KeyboardAvoidingView>
@@ -85,13 +106,12 @@ const SignIn = ({navigation}) => {
   );
 };
 
-export default SignIn;
+export default SignUp;
 
-// ყველგან ან სტილები მაღლა ან ეხპორტი
 const styels = StyleSheet.create({
   conatiner: {
-    paddingTop: 24,
     flex: 1,
+    paddingTop: 24,
     paddingLeft: 10,
     paddingRight: 10,
   },

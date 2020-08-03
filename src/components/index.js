@@ -1,10 +1,10 @@
-import Burger from './Burger';
-import Drawer from './Drawer';
-import CustomDropdownAlert from './CustomDropdownAlert';
-import Container from './Container';
-import Loader from './Loader';
-import TripsFilter from './TripsFilter';
-import UserIteim from './UserIteim';
+import Burger from './shared/Burger';
+import Drawer from './shared/Drawer';
+import CustomDropdownAlert from './shared/CustomDropdownAlert';
+import Container from './shared/Container';
+import Loader from './shared/Loader';
+import TripsFilter from './trips/TripsFilter';
+import UserItem from './users/UserItem';
 
 export {
   Burger,
@@ -13,5 +13,5 @@ export {
   Container,
   Loader,
   TripsFilter,
-  UserIteim,
+  UserItem,
 };

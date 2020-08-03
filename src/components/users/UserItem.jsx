@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {ListItem} from 'react-native-elements';
-import {colors} from '../theme';
+import {colors} from '../../theme';
 
-const UserIteim = ({user, onPress}) => {
+const UserItem = ({user, onPress}) => {
   const {displayName} = user;
   return (
     <ListItem
@@ -20,7 +20,7 @@ const UserIteim = ({user, onPress}) => {
   );
 };
 
-export default UserIteim;
+export default UserItem;
 
 const styles = StyleSheet.create({
   lElCon: {

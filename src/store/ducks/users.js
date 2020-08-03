@@ -1,4 +1,4 @@
-import axiosInstance from '../../interseptor';
+import axiosInstance from '../../interceptor';
 import {backendURL} from '../../utils/api';
 import {showMessage} from './main';
 import {goBack} from '../../services/navigationService';
