@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "220557631176",
+    "firebase_url": "https://trips-41caf.firebaseio.com",
+    "project_id": "trips-41caf",
+    "storage_bucket": "trips-41caf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220557631176:android:911fa992d1133c8a57cffd",
+        "android_client_info": {
+          "package_name": "com.toptal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220557631176-o9oft3obveephmj0su18s4lcpoqhjfpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXjEjH_PCPxR6Bu4F1DMgmE1QR7UeiKCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220557631176-o9oft3obveephmj0su18s4lcpoqhjfpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
